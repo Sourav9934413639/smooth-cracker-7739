@@ -1,40 +1,27 @@
-let form = document.querySelector("form")
-let userdata = JSON.parse(localStorage.getItem("userdata") )||[]
-form.addEventListener("submit", function(event) {
-
-    event.preventDefault()
-let data = {
-
-email : form.email.value,
-password : form.password.value
-
-
-
-}
-
-if(signin(data.email, data.password)== false){
-    localStorage.setItem("signin", JSON.stringify(data));
-    alert("account login successful");
-    window.location.href ="index.html"
-}else{
-    alert("wrong password or email");
-   
-}
-
-
-})
-
-function signin(email,password){
-
-    let filtered = userdata.filter(function(elem){
-
-        return elem.email.value == email && elem.password.value == password
-    })
-    if(filtered.length > 0){
-        return true
-    }else{
-        return false
-
+let form=document.querySelector("form");
+let signup=JSON.parse(localStorage.getItem("signup")) || [];
+form.addEventListener("submit",function(event){
+    event.preventDefault();
+    if(signup.length===0)
+    {
+        alert("No Data");
+        return;
     }
-
-}
+    let obj={
+        email:form.email.value,
+        password:form.password.value,
+    }
+    let loginaccess=false;
+   signup.forEach(function(elem){
+    if(elem.email===obj.email && elem.password===obj.password){
+        loginaccess=true;
+        localStorage.setItem("login",JSON.stringify(elem));
+        alert("login Success");
+        window.location.href="index.html";
+    }
+   })
+   if(loginaccess===false)
+   {
+    alert("Invalid Data")
+   }
+})
