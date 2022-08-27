@@ -1,0 +1,123 @@
+#main{
+    width: 100%;
+    height: auto;
+    border: 1px solid grey;
+    display: flex;
+    justify-content: first baseline;
+   gap: 350px;
+   font-weight: lighter;
+
+}
+#main>h4{
+    color: rgb(75, 74, 74);
+}
+#main>img{
+    width: 20%;
+}
+
+
+
+
+#container{
+    width:30%;
+    height: 750px;
+    border: 3px solid rgb(231, 225, 225);
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+#top{
+    text-align: center;
+    
+
+}#top>h2{
+    color:#000000;
+    font-weight: bolder;
+    font-size: 25px;
+    font-family:  'Open Sans',  sans-serif;
+}
+   
+#top>p{
+    color: grey;
+    margin-top: -15px;
+    font-family:  'Open Sans',  sans-serif;
+    margin-bottom: 50px;
+}
+.google{
+    width: 90%;
+    height: 50px;
+    border: 1px solid grey;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+   
+}
+.google>img{
+    width: 40px;
+    height: 35px;
+}
+.google>p>a{
+    color: #7A8691;
+    font-family:  'Open Sans',  sans-serif;
+    text-decoration: none;
+}
+#or{
+    text-align: center;
+    color:#A1B2B7;
+    text-decoration: solid;
+    font-family:  'Open Sans',  sans-serif;
+    font-size: 25px;
+    
+}
+#para{
+    text-align: center;
+    color: #6C798F;
+    font-family:  'Open Sans',  sans-serif;
+    text-decoration: none;
+}
+
+input{
+   
+    font-family:  'Open Sans',  sans-serif;
+   margin-left: 50PX;
+    font-size: 15px;
+    margin-top: 20px;
+    padding: 10px 40px;
+  
+    
+}
+button{
+    width: 80%;
+    height: 50px;
+    text-align: center;
+   margin-left: 35px;
+   margin-top: 20px;
+   background-color: white;
+   color: blue;
+   border:1px solid grey;
+   border-radius: 10px;
+   font-size: 16px;
+   font-family: 'Open Sans',  sans-serif;
+   font-weight: 700;
+}
+button:hover{
+    background-color: blue;
+    color: white;
+}
+#last{
+    margin :auto;
+    text-align: center;
+}
+#last>p{
+    color:#A1B2B7 ;
+    font-family:  'Open Sans',  sans-serif;
+}
+#last>p>a{
+    text-decoration: none;
+    color: blue;
+    font-weight: 700;
+}
