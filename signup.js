@@ -17,7 +17,7 @@ form.addEventListener("submit",function(event){
     else{
    if(obj.email==""|| obj.confirm==""|| obj.password=="")
    {
-    alert("fill emppty fileds")
+    alert("fill empty fileds")
    }
    else{
     alert("successfully created account")
