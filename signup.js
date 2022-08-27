@@ -1,37 +1,30 @@
-let form = document.querySelector("form")
-let userdata = JSON.parse(localStorage.getItem("userdata") )||[]
-form.addEventListener("submit", function(event) {
+let form=document.querySelector("form");
+let signup=JSON.parse(localStorage.getItem("signup")) || [];
 
-    event.preventDefault()
-let data = {
-
-email : form.email.value,
-password : form.password.value,
-confirmPassword : form.password2.value
-
-
+form.addEventListener("submit",function(event){
+    event.preventDefault();
+    let obj={
+        
+        email:form.email.value,
+        password:form.password.value,
+        confirm:form.password2.value
+    }
+    // console.log(obj)
+    if(obj.password!=obj.confirm)
+    {
+        alert("enter password and confirm password same")
+    }
+    else{
+   if(obj.email==""|| obj.confirm==""|| obj.password=="")
+   {
+    alert("fill emppty fileds")
+   }
+   else{
+    alert("successfully created account")
+    window.location.href ="signin.html"
+    signup.push(obj);
+    localStorage.setItem("signup", JSON.stringify(signup));
+   }
 }
-if(checkemail(data.email)=== true){
-
-    userdata.push(data);
-    localStorage.setItem("userdata", JSON.stringify(userdata))
-    alert("registration successful");
-    window.location.href ="signin.html";
-}else{
-    alert("Account already exists!");
-}
-
-
 
 })
- function checkemail(){
-    let filtered = userdata.filter(function(elem){
-        return email === elem.email;
-    })
-    if(filtered.length > 0){
-return false;
-
-    }else{
-        return true;
-    }
- }
