@@ -16,18 +16,29 @@ let append = (data)=> {
     data.forEach((el)=>{
 
         let div = document.createElement('div');
+        // div.style.border = "1px solid red"
 
         let img = document.createElement('img')
         img.src = el.urlToImage;
+        img.style.width="100%"
 
         let title  = document.createElement('h3')
         title.innerText = el.title;
+        title.style.marginLeft="4%"
 
         let desc = document.createElement('p');
         desc.innerText = el.description;
+        desc.style.marginLeft="4%"
+        desc.style.fontFamily="sans-sarif";
+        desc.style.fontSize="17px"
+
+        let date = document.createElement('p');
+        date.innerHTML=  `Date:- ${el.publishedAt}`;
+        date.style.fontWeight="bold"
+        date.style.marginLeft="4%"
 
 
-        div.append(img,title,desc);
+        div.append(img,title,desc,date);
         document.getElementById('cont').append(div)
     })
 }

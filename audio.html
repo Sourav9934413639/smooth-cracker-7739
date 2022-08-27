@@ -16,12 +16,13 @@
             color: gray;
         }
         #container{
-            border: 1px solid;
+            /* border: 1px solid; */
             width: 50%;
             height: auto;
             display: flex;
-            margin-left: 4%;
+            margin-left: 6%;
             gap: 10px;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
         }
 
         a{
@@ -39,32 +40,41 @@
             display: grid;
             width: 80%;
             grid-template-columns: repeat(4,1fr);
-            grid-template-rows: repeat(2,350px);
+            grid-template-rows: repeat(2,auto);
             margin: auto;
-            gap: 20px;
+            gap: 22px;
         }
 
         #shows>div{
-            border: 1px solid red;
+            /* border: 1px solid red; */
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
         }
 
         .box{
             display: flex;
             justify-content: space-between;
+            font-size: 18px;
+            font-family: sans-serif;
+            line-height: 130%;
         }
 
+        .box>p:first-child:hover{
+            margin-left: 5%;
+            color: red;
+        }
+/* 
         img:hover,
 img:focus{
   width:100%;
   height: 300px;
-}
+} */
 
 
-.box:hover,
+/* .box:hover,
 .box:focus{
   width:38%;
   height: 300px;
-}
+} */
     </style>
 </head>
 <body>
@@ -91,13 +101,57 @@ img:focus{
                 <p>2018</p>
             </div>
         </div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+
+        <div>
+            <img src="https://images.indianexpress.com/2022/07/Movie-Police-Logo-2000x2000-1.jpg?w=300" alt="">
+            <div class="box">
+                <p>Movie Police</p>
+                <p>5</p>
+            </div>
+        </div>
+
+        <div>
+            <img src="https://images.indianexpress.com/2022/07/Express-View-Thumbnail.jpg?w=300" alt="">
+            <div class="box">
+                <p>Express View</p>
+                <p>82</p>
+            </div>
+        </div>
+
+        <div> <img src="https://images.indianexpress.com/2022/05/Sports-light.jpg?w=300" alt="">
+        <div class="box">
+            <p>Express Sports</p>
+            <p>226</p>
+        </div>
+    </div>
+        
+        <div>
+            <img src="https://images.indianexpress.com/2022/04/Expresso-health.jpg?w=300" alt="">
+            <div class="box">
+                <p>Expresso Health Updates Of The Week</p>
+            </div>
+        </div>
+
+        <div>
+            <img src="https://images.indianexpress.com/2022/08/Express-View-the-editorial-podcast-8.jpg?w=300" alt="">
+         <div class="box">
+           <p> Minding Your Acents (30 August)</p>
+         </div>
+        </div>
+
+        <div>
+            <img src="https://images.indianexpress.com/2022/08/Express-View-the-editorial-podcast-8.jpg?w=300" alt="">
+            <div class="box">
+                <p>Finland`s PM 'partygate' episode frames largr issues and blurred lines (30 August)</p>
+            </div>
+        </div>
+
+        <div>
+            <img src="https://images.indianexpress.com/2022/08/Express-View-the-editorial-podcast-8.jpg?w=300" alt="">
+            <div class="box">
+                <p>CJI Ramana`s legacy has high points for his successor to build on (31 August)</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
