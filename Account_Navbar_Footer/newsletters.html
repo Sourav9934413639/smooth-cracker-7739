@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Newsletters</title>
+    <link rel="stylesheet" href="./style/navbar.css">
+    
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #mail{
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid grey;
+            margin: auto;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        #mail>div{
+            display: flex;
+        }
+        #mail>div:last-child{
+            width: 70%;
+            
+            justify-content: flex-end;
+        }
+        #email{
+            width: 70%;
+            border: 1px solid grey;
+            border-radius: 5px;
+        }
+        
+        #sub_btn{
+            border: 1px solid violet;
+            color: white;
+            background-color: red;
+            font-weight: bold;
+            font-family: sans-serif;
+            padding: 10px 30px;
+            margin-left: 5px;
+            border-radius: 5px;
+        }
+        #mail>div:first-child{
+            gap:10px;
+        }
+        #mail>div:first-child>p{
+            margin-top: 7px;
+            font-size: 20px;
+        }
+
+        #row1,#row2,#row3,#row4,#row5{
+            width: 53%;
+            display: flex;
+            margin: auto;
+            gap: 10px;
+        }
+        #row1>div{
+            width: 30%;
+            border: 1px solid grey;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px 30px 5px 20px;
+            margin-bottom: 15px;
+        }
+        #row2>div{
+            width: 30%;
+            border: 1px solid grey;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px 30px 5px 20px;
+            margin-bottom: 15px;
+        }
+        #row3>div{
+            width: 30%;
+            border: 1px solid grey;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px 30px 5px 20px;
+            margin-bottom: 15px;
+        }
+        #row4>div{
+            width: 30%;
+            border: 1px solid grey;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px 30px 5px 20px;
+            margin-bottom: 15px;
+        }
+        #row5>div{
+            width: 30%;
+            border: 1px solid grey;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px 30px 5px 20px;
+            margin-bottom:15px;
+        }
+        #email{
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            padding-left: 20px;
+        }
+        #h1,#h2{
+            width: 53%;
+            margin: 25px auto;
+        }
+        #h1{
+            text-align: center;
+            margin-top: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="./style/foot.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <div id="subscription_info"></div>
+    <div id="email_address"><a href=""></a></div>
+    <div id="container"></div>
+    <div id="foot"></div>
+</body>
+</html>
+<script type="module">
+    let mail_add=JSON.parse(localStorage.getItem("profile_details"))
+    
+    
+    import navbar from '../Account_Navbar_Footer/components/navbar.js';
+
+    
+    
+    document.querySelector("#navbar").innerHTML=navbar();
+    let h1=document.createElement("h1");
+    h1.setAttribute("id","h1");
+    h1.innerText="The Indian Express Newspaper & Alerts";
+    let h2=document.createElement("h2");
+    h2.setAttribute("id","h2");
+    h2.innerText="Subscribe and stay updated with the latest reportage, insightful commentary and in-depth analysis, deliverd to your inbox";
+    document.querySelector("#subscription_info").append(h1,h2);
+    let mail=document.createElement("div");
+    mail.setAttribute("id","mail")
+    let ch_box_div=document.createElement("div");
+    let ch_box=document.createElement("input");
+    ch_box.setAttribute("type","checkbox");
+    ch_box.setAttribute("id","ch_box");
+    ch_box.addEventListener("change",function(){
+        tick();
+    })
+    let sel=document.createElement("p");
+    sel.innerText="Select All";
+    ch_box_div.append(ch_box,sel);
+    let subs=document.createElement("div");
+    let email=document.createElement("div");
+    email.setAttribute("id","email")
+    email.innerText=mail_add.Email;
+    let sub_btn=document.createElement("div");
+    sub_btn.setAttribute("id","sub_btn")
+    sub_btn.innerText="Subscribe";
+    sub_btn.addEventListener("click",function(){
+        subs_cribe();
+    })
+    subs.append(email,sub_btn);
+    mail.append(ch_box_div,subs);
+    document.querySelector("#email_address").append(mail);
+    
+    let row1=document.createElement("div");
+    row1.setAttribute("id","row1");
+    let row2=document.createElement("div");
+    row2.setAttribute("id","row2");
+    let row3=document.createElement("div");
+    row3.setAttribute("id","row3");
+    let row4=document.createElement("div");
+    row4.setAttribute("id","row4");
+    let row5=document.createElement("div");
+    row5.setAttribute("id","row5");
+   
+    let card1=document.createElement("div");
+    let ch1=document.createElement("input");
+    ch1.setAttribute("type","checkbox");
+    ch1.setAttribute("value","Daily Newsletter");
+    ch1.setAttribute("id","ch1");
+    let heading1=document.createElement("h2");
+    heading1.innerText="Daily Newsletter";
+    let p1=document.createElement("p");
+    p1.innerText="Subscribe to receive the day's headlines from The Indian Express straight in your inbox";
+    card1.append(ch1,heading1,p1);
+  
+    let card2=document.createElement("div");
+    let ch2=document.createElement("input");
+    ch2.setAttribute("type","checkbox");
+    ch2.setAttribute("value","Explained");
+    ch2.setAttribute("id","ch2");
+    let heading2=document.createElement("h2");
+    heading2.innerText="Explained";
+    let p2=document.createElement("p");
+    p2.innerText="Want to go beyond the news and understand the headlines? Subscribe to Explained by The Indian Express";
+    card2.append(ch2,heading2,p2);
+
+    let card3=document.createElement("div");
+    let ch3=document.createElement("input");
+    ch3.setAttribute("type","checkbox");
+    ch3.setAttribute("value","Opinion");
+    ch3.setAttribute("id","ch3");
+    let heading3=document.createElement("h2");
+    heading3.innerText="Opinion";
+    let p3=document.createElement("p");
+    p3.innerText="Inform your opinion. Read what today's changemakers are saying.Subscribe to our Opinion & Editorial newsletter";
+    card3.append(ch3,heading3,p3);
+
+    row1.append(card1,card2,card3);
+
+    let card4=document.createElement("div");
+    let ch4=document.createElement("input");
+    ch4.setAttribute("type","checkbox");
+    ch4.setAttribute("value","Technology");
+    ch4.setAttribute("id","ch4");
+    let heading4=document.createElement("h2");
+    heading4.innerText="Technology";
+    let p4=document.createElement("p");
+    p4.innerText="Subscribe for new launches, reviews and all that's making headlines in the tech world";
+    card4.append(ch4,heading4,p4);
+
+    let card5=document.createElement("div");
+    let ch5=document.createElement("input");
+    ch5.setAttribute("type","checkbox");
+    ch5.setAttribute("value","Entertainment");
+    ch5.setAttribute("id","ch5");
+    let heading5=document.createElement("h2");
+    heading5.innerText="Entertainment";
+    let p5=document.createElement("p");
+    p5.innerText="Subscribe to receive the day's most read Entertainment stories straight in your inbox";
+    card5.append(ch5,heading5,p5);
+
+    let card6=document.createElement("div");
+    let ch6=document.createElement("input");
+    ch6.setAttribute("type","checkbox");
+    ch6.setAttribute("value","Let Us Explain");
+    ch6.setAttribute("id","ch6");
+    let heading6=document.createElement("h2");
+    heading6.innerText="Let Us Explain";
+    let p6=document.createElement("p");
+    p6.innerText="Every Sunday-a wrap of the week's headlines from the Explained editor";
+    card6.append(ch6,heading6,p6);
+    row2.append(card4,card5,card6);
+
+    let card7=document.createElement("div");
+    let ch7=document.createElement("input");
+    ch7.setAttribute("type","checkbox");
+    ch7.setAttribute("value","In Our Opinion");
+    ch7.setAttribute("id","ch7");
+    let heading7=document.createElement("h2");
+    heading7.innerText="In Our Opinion";
+    let p7=document.createElement("p");
+    p7.innerText="A weekly from the Opinions editor on what's shapping and changing prespectives";
+    card7.append(ch7,heading7,p7);
+
+    let card8=document.createElement("div");
+    let ch8=document.createElement("input");
+    ch8.setAttribute("type","checkbox");
+    ch8.setAttribute("value","Explain Speaking Economy");
+    ch8.setAttribute("id","ch8");
+    let heading8=document.createElement("h2");
+    heading8.innerText="Explain Speaking Economy";
+    let p8=document.createElement("p");
+    p8.innerText="Udit Misra on what lies ahead for India's economy,every week";
+    card8.append(ch8,heading8,p8);
+
+    let card9=document.createElement("div");
+    let ch9=document.createElement("input");
+    ch9.setAttribute("type","checkbox");
+    ch9.setAttribute("value","Northeast Dispatch");
+    ch9.setAttribute("id","ch9");
+    let heading9=document.createElement("h2");
+    heading9.innerText="Northeast Dispatch";
+    let p9=document.createElement("p");
+    p9.innerText="Subscribe to our weekly newsletter on the stories that matter from the Northeast";
+    card9.append(ch9,heading9,p9);
+    row3.append(card7,card8,card9)
+
+    let card10=document.createElement("div");
+    let ch10=document.createElement("input");
+    ch10.setAttribute("type","checkbox");
+    ch10.setAttribute("value","Sunday Eye");
+    ch10.setAttribute("id","ch10");
+    let heading10=document.createElement("h2");
+    heading10.innerText="Sunday Eye";
+    let p10=document.createElement("p");
+    p10.innerText="The best long reads delivered to your inbox every Sunday";
+    card10.append(ch10,heading10,p10);
+
+    let card11=document.createElement("div");
+    let ch11=document.createElement("input");
+    ch11.setAttribute("type","checkbox");
+    ch11.setAttribute("value","Express Research");
+    ch11.setAttribute("id","ch11");
+    let heading11=document.createElement("h2");
+    heading11.innerText="Express Research";
+    let p11=document.createElement("p");
+    p11.innerText="We dig deep into one story you wanted to know more about, or knew nothing about";
+    card11.append(ch11,heading11,p11);
+
+    let card12=document.createElement("div");
+    let ch12=document.createElement("input");
+    ch12.setAttribute("type","checkbox");
+    ch12.setAttribute("value","Pune Bulletin");
+    ch12.setAttribute("id","ch12");
+    let heading12=document.createElement("h2");
+    heading12.innerText="Pune Bulletin";
+    let p12=document.createElement("p");
+    p12.innerText="Sign up for the latest news and updates from Pune in your inbox,daily";
+    card12.append(ch12,heading12,p12);
+    row4.append(card10,card11,card12);
+
+    let card13=document.createElement("div");
+    let ch13=document.createElement("input");
+    ch13.setAttribute("type","checkbox");
+    ch13.setAttribute("value","The Capital Letter");
+    ch13.setAttribute("id","ch13");
+    let heading13=document.createElement("h2");
+    heading13.innerText="The Capital Letter";
+    let p13=document.createElement("p");
+    p13.innerText="Sign up for the latest news and updates from delhi=NCR in your inbox, daily";
+    card13.append(ch13,heading13,p13);
+
+    let card14=document.createElement("div");
+    let ch14=document.createElement("input");
+    ch14.setAttribute("type","checkbox");
+    ch14.setAttribute("value","Mumbau Bulletin");
+    ch14.setAttribute("id","ch14");
+    let heading14=document.createElement("h2");
+    heading14.innerText="Mumbau Bulletin";
+    let p14=document.createElement("p");
+    p14.innerText="Get the latest news and updates from Mumbai in your inbox, daily";
+    card14.append(ch14,heading14,p14);
+
+    let card15=document.createElement("div");
+    let ch15=document.createElement("input");
+    ch15.setAttribute("type","checkbox");
+    ch15.setAttribute("value","Express Sports");
+    ch15.setAttribute("id","ch15");
+    let heading15=document.createElement("h2");
+    heading15.innerText="Express Sports";
+    let p15=document.createElement("p");
+    p15.innerText="Subscribe to Sandeep Dwivedi's weekly sports newsletter";
+    card15.append(ch15,heading15,p15);
+    row5.append(card13,card14,card15);
+    document.querySelector("#container").append(row1,row2,row3,row4,row5);
+    
+    function tick()
+    {
+        if(event.target.checked==true)
+       {
+        document.getElementById("ch1").checked=true;
+        document.getElementById("ch2").checked=true;
+        document.getElementById("ch3").checked=true;
+        document.getElementById("ch4").checked=true;
+        document.getElementById("ch5").checked=true;
+        document.getElementById("ch6").checked=true;
+        document.getElementById("ch7").checked=true;
+        document.getElementById("ch8").checked=true;
+        document.getElementById("ch9").checked=true;
+        document.getElementById("ch10").checked=true;
+        document.getElementById("ch11").checked=true;
+        document.getElementById("ch12").checked=true;
+        document.getElementById("ch13").checked=true;
+        document.getElementById("ch14").checked=true;
+        document.getElementById("ch15").checked=true;
+        }
+        else if(event.target.checked==false)
+       {
+        ch1.checked=false;
+        ch2.checked=false;
+        ch3.checked=false;
+        ch4.checked=false;
+        ch5.checked=false;
+        ch6.checked=false;
+        ch7.checked=false;
+        ch8.checked=false;
+        ch9.checked=false;
+        ch10.checked=false;
+        ch11.checked=false;
+        ch12.checked=false;
+        ch13.checked=false;
+        ch14.checked=false;
+        ch15.checked=false;
+        }
+    }
+    
+    function subs_cribe()
+    {
+        alert("Thank you for subscribing");
+    }
+    import footer from '../Account_Navbar_Footer/components/foot.js';
+    document.querySelector("#foot").innerHTML=footer();
+</script>

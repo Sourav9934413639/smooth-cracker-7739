@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+     <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        #head{
+            display: flex;
+            border-bottom: 1px solid grey;
+            margin-bottom: 40px;
+       } 
+       #head>div{
+        width: 40%;
+        padding: 12px;
+       }
+       #head>div{
+        display: flex;
+        align-items: center;
+       }
+       #head>div>div>img{
+        display: block;
+        width: 100%;
+        height: 20px;
+       }
+       #head>div>div>h3{
+        font-style: italic;
+        font-size:25px;
+        
+       }
+       span{
+        font-style: normal;
+        font-size: 25px;
+        font-family: sans-serif;
+       }
+        #head>div>div:first-child{
+            margin-left: 20px;
+        }
+        #h{
+            font-weight: bold;
+            text-align: center;
+        }
+        #x{
+            text-align: center;
+            color: grey;
+            font-family: sans-serif;
+            font-size: 14px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+        #main_body{
+            width: 50%;
+            display: flex;
+            
+            margin: auto;
+            gap: 10px;
+        }
+        #main_body>div:first-child{
+           
+           width: 25%;
+           
+        }
+        #main_body>div>div{
+            padding: 10px;
+            font-size: 18px;
+            font-family: sans-serif;
+            margin-bottom: -10px;
+        }
+        #main_body>div>div>p{
+            padding: 10px 0px;
+            padding-left: 20px;
+        }
+        #main_body>div:last-child{
+            border: 1px solid grey;
+            width: 55%;
+            padding: 30px;
+
+        }
+        #info{
+            
+            padding: 30px;
+            width: 50%;
+        }
+        #info>p{
+            color: grey;
+            font-family: sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            margin-left: 10px;
+            margin-bottom: 30px;
+        }
+        #info>h2{
+            margin-left: 10px;
+        }
+        #form{
+            width: 100%;
+        }
+        #form>div{
+            display: flex;
+            margin-bottom: 20px;
+        }
+        #form>div>div{
+            width: 50%;
+            
+        }
+        #form>div>div>input{
+            width: 95%;
+            border: none;
+            border-bottom: 1px solid green;
+        }
+        #update{
+            display: block;
+            margin: auto;
+            padding: 10px 30px;
+            color: blue;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 1px solid grey;
+            background-color: white;
+        }
+        #main_body>div>div>p:hover{
+            color: white;
+            background-color: blue;
+            border-radius: 10px;
+        }
+        #day{
+            width: 30%;
+        }
+        #month{
+            width: 30%;
+        }
+        #year{
+            width: 30%;
+        }
+     </style>
+</head>
+<body>
+    
+    <div id="head">
+        <div>
+            <div><img src="./Images/backarrow.jpg" alt=""></div>
+            <div>Back to Indianexpress</div>
+        </div>
+        <div>
+        <div><img src="./Images/logo.jpg" alt=""></div>
+      <div><h3>The Indian<span>EXPRESS</span></h3></div>
+      </div>
+    </div>
+    <h2 id="h">My Account</h2>
+    <p id="x">Manage your profile,ePaper subscriptions and how it is delivered here.You can also signup for popular newsletter below.</p>
+    <div id="main_body">
+        <div>
+            <div><p id="ma" onclick="highlight(id)">My Account</p></div>
+            <div><p id="ms" onclick="highlight(id)">Manage Subscriptions</p></div>
+            <div><p id="cp" onclick="highlight(id)">Change Password</p></div>
+            <div><p id="mn" onclick="highlight(id)">Manage Newsletters</p></div>
+            <div><p id="log_out" onclick="highlight(id)">Logout</p></div>
+        </div>
+        <div id="info">
+            <h2>Personal Information</h2>
+            <p>Please update your information below.It will help us to create <br> personalised products specially for you.</p>
+        
+           <div id="form">
+            <div>
+            <div>
+                <div>Email Address</div>
+                <input type="address" id="address">
+            </div>
+            <div>
+                <div>Mobile Number</div>
+                <input placeholder="Mobile Number" type="number" id="mo_no">
+            </div>
+            </div>
+            
+            <div>
+                <div>
+                    <div>First Name</div>
+                    <input placeholder="First Name" type="text" id="f_name">
+                </div>
+                <div>
+                    <div>Last Name</div>
+                    <input placeholder="Last Name" type="text" id="l_name">
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <div>Dob</div>
+                    <div>
+                        <select name="" id="day">
+                            <option value="DD">DD</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        <select name="" id="month">
+                            <option value="MM">MM</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                        </select>
+                        <select name="" id="year">
+                            <option value="YYYY">YYYY</option>
+                            <option value="1982">1982</option>
+                            <option value="1983">1983</option>
+                            <option value="1984">1984</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <div>Gender:</div>
+                    <div>
+                        <input type="radio" name="gender" value="Male" id="r1">Male
+                        <input type="radio" name="gender" value="female" id="r2">Female
+                        <input type="radio" name="gender" value="Don't Specify" id="r3">Don't specify
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <div>Country:</div>
+                    <select name="" id="country">
+                        <option value="">India</option>
+                        <option value="Andaman & Nicobar">Andaman & Nicobar</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="Bulgaria">Bulgaria</option>
+                    </select>
+                </div>
+                <div>
+                    <div>City</div>
+                    <input type="city" id="city">
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <div>Education</div>
+                    <select name="" id="education">
+                        <option value=""></option>
+                        <option value="High School-10th">High School-10th</option>
+                        <option value="Senior School-12th">Senior School-12th</option>
+                        <option value="Graduation">Graduation</option>
+                        <option value="Post graduation">Post graduation</option>
+                        <option value="Doctorate">Doctorate</option>
+                        <option value="Diploma">Diploma</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                <div>
+                    <div>Employment Status</div>
+                    <select name="" id="employment">
+                        <option value=""></option>
+                        <option value="Service(private)">Service(private)</option>
+                        <option value="Service(public sector)">Service(public sector)</option>
+                        <option value="Service(government)">Service(government)</option>
+                        <option value="Business">Business</option>
+                        <option value="Professional">Professional</option>
+                        <option value="retired">Retired</option>
+                        <option value="Trade">Trade</option>
+                        <option value="Student">Student</option>
+                        <option value="Housewife">Housewife</option>
+                        <option value="Self-employed">Self-employed</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <div>Family Income</div>
+                    <select name="" id="income">
+                        <option value=""></option>
+                        <option value="less than 300,000">Less than 300,000</option>
+                        <option value="300,000 to 500,000">300,000 to 500,000</option>
+                        <option value="500,000 to 10,00,000">500,000 to 10,00,000</option>
+                        <option value="10,00,000 to 25,00,000">10,00,000 to 25,00,000</option>
+                        <option value="25,00,000 to 1,00,00,000">25,00,000 to 1,00,00,000</option>
+                        <option value="above 1,00,00,000">Above 1,00,00,000</option>
+                    </select>
+                </div>
+                <div>
+                    <div>GSTIN Number</div>
+                    <input type="text" placeholder="GSTIN Number" id="gstin">
+                </div>
+            </div>
+
+        </div>
+        <button id="update" onclick="update()">Update Profile</button>
+    </div>
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById("ma").style="color:white;background-color:blue;border-radius:10px";
+   function highlight(id)
+   {
+     if(id=="ms")
+     {
+        window.location.href="./subscription.html";
+        
+     }
+     else if(id=="cp")
+     {
+        window.location.href="./changepassword.html";
+     }
+     else if(id=="mn")
+     {
+        window.location.href="./newsletters.html";
+     }
+     else if(id=="log_out")
+     {
+        
+     }
+     
+   }
+        
+        
+   function update()
+   {
+    
+        let email=document.getElementById("address").value;
+        let mo_no=document.getElementById("mo_no").value;
+        let f_name=document.getElementById("f_name").value;
+        let l_name=document.getElementById("l_name").value;
+        let day=document.getElementById("day");
+        let x=day.options[day.selectedIndex].text;
+        let month=document.getElementById("month");
+        let y=month.options[month.selectedIndex].text;
+        let year=document.getElementById("year");
+        let z=year.options[year.selectedIndex].text;
+        let country=document.getElementById("country");
+        let coun=country.options[country.selectedIndex].text;
+        let education=document.getElementById("education");
+        let edu=education.options[education.selectedIndex].text;
+        let employ=document.getElementById("employment");
+        let status=employ.options[employ.selectedIndex].text;
+        console.log(email,mo_no,f_name,l_name,x,y,z,coun,edu,status);
+        let city=document.getElementById("city").value;
+        let income=document.getElementById("income").value;
+        let gstin=document.getElementById("gstin").value;
+        let r1=document.getElementById("r1");
+        let r2=document.getElementById("r2");
+        let r3=document.getElementById("r3");
+        let gender;
+        if(r1.checked==true)
+        {
+            gender=r1.value;
+        }
+        else if(r2.checked==true)
+        {
+            gender=r2.value;
+        }
+        else if(r3.checked==true)
+        {
+            gender=r3.value;
+        }
+        console.log(city,income,gstin,gender);
+        let profileDetails={
+            Email:email,
+            Mobile_Number:mo_no,
+            First_Name:f_name,
+            Last_Name:l_name,
+            Day:x,
+            Month:y,
+            Year:z,
+            Date_of_birth:`${x}-${y}-${z}`,
+            Country:coun,
+            Education:edu,
+            Employment_Status:status,
+            City:city,
+            Income:income,
+            Gender:gender,
+            GSTIN_Number:gstin
+        }
+        console.log(profileDetails)
+        localStorage.setItem("profile_details",JSON.stringify(profileDetails));
+        
+   }
+   
+   function save()
+   {
+     let data=JSON.parse(localStorage.getItem("profile_details"));
+     document.getElementById("address").value=data.Email;
+     document.getElementById("mo_no").value=data.Mobile_Number;
+     document.getElementById("f_name").value=data.First_Name;
+     document.getElementById("l_name").value=data.Last_Name;
+     document.getElementById("day").value=data.Day;
+     document.getElementById("month").value=data.Month;
+     document.getElementById("year").value=data.Year;
+     document.getElementById("country").value=data.Country;
+     document.getElementById("education").value=data.Education;
+     document.getElementById("employment").value=data.Employment_Status;
+     document.getElementById("city").value=data.City;
+     document.getElementById("income").value=data.Income;
+     if(r1.value==data.Gender)
+     {
+        r1.checked=true;
+     }
+     else if(r2.value==data.Gender)
+     {
+        r2.checked=true;
+     }
+     else if(r3.value==data.Gender)
+     {
+        r3.checked=true;
+     }
+     document.getElementById("gstin").value=data.GSTIN_Number;
+   }
+   save();
+</script>

@@ -1,0 +1,60 @@
+#foot{
+    background-color: black;
+}
+#footer_bar{
+    width: 50%;
+    margin: auto;
+    border: 1px solid black;
+    
+}
+.box1{
+display: flex;
+margin: auto;
+margin-top: 10px;
+}
+.box1>div{
+margin: auto;
+width: 23%;
+}
+.box1>div>ul>li{
+margin-bottom: 10px;
+}
+h3{
+border-bottom:1px solid #595959;
+color: #595959;
+font-family: sans-serif;
+font-size: 15px;
+padding: 8px 0px;
+}
+ul{
+color:#595959;
+}
+a{
+text-decoration: none;
+color:white;
+font-family: sans-serif;
+font-size: 14px;
+}
+
+#copyright{
+display: flex;
+color: white;
+font-family: sans-serif;
+border-top: 1px solid #595959;
+border-bottom:1px solid #595959;
+
+justify-content: space-between;
+padding: 10px 0px;
+}
+#copy,#wordpress{
+display: block;
+width: 25px;
+height: 30px;
+margin-top: -5px;
+}
+#copyright>div{
+display: flex;
+}
+#copyright p{
+color: #7E828E;
+}
