@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
         #nav {
             width: 350px;
@@ -50,32 +51,37 @@
             margin-inline-start: 0px;
             margin-inline-end: 0px;
         }
-        #card{
+
+        #card {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
             /* border: 1px solid red; */
             width: 70%;
             margin: auto;
             margin-top: 55px;
             font-family: 'Droid Serif', serif;
-            
+
 
         }
-        .c1{
+
+        .c1 {
             width: 80%;
             text-align: center;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             border-radius: 10px;
             height: 300px;
-            
+
 
         }
-        .c1:hover{
+
+        .c1:hover {
             cursor: pointer;
             border: 2px solid blue;
-            position:sticky;
+            position: sticky;
+            box-sizing: border-box;
         }
-        .disc{
+
+        .disc {
             width: 80%;
             background-color: rgb(62, 62, 204);
             color: aliceblue;
@@ -83,6 +89,15 @@
             margin: 35px auto 35px auto;
             padding: 5px 0 5px 0;
             font-family: 'Droid Serif', serif;
+        }
+
+        #wraper {
+            display: grid;
+        }
+
+        .reportage-icon {
+            background: url(/wp-content/themes/indianexpress/images/evolok/reportage.svg) no-repeat #2b3248 center;
+            background-size: 64px;
         }
     </style>
 </head>
@@ -130,7 +145,31 @@
 
         </div>
     </div>
+    <p style="margin-top: 35px;font-family: 'Droid Serif', serif;">
+        FOR MULTI-USER AND CORPORATE SUBSCRIPTIONS,
+        <span style="color: blue; font-family:italic">CLICK HERE</span>
+    </p>
+
+    <div id="wraper">
+        
+       
+                <div class="card2">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                The best investigations, interviews and deep dive reportage
+                </div>
+ 
+
+        
+        <div class="card2">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="card2"></div>
+        <div class="card2"></div>
+
+    </div>
+
 
 </body>
 
 </html>
+<script src="https://kit.fontawesome.com/bccd922fb7.js" crossorigin="anonymous"></script>
