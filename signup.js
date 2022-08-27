@@ -15,7 +15,8 @@ if(checkemail(data.email)=== true){
 
     userdata.push(data);
     localStorage.setItem("userdata", JSON.stringify(userdata))
-    alert("jakas")
+    alert("registration successful");
+    window.location.href ="signin.html";
 }else{
     alert("Account already exists!");
 }
