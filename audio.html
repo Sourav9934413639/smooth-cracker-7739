@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+    <style>
+
+        #head{
+            color: gray;
+            margin-left: 4%;
+        }
+
+        u{
+            color: gray;
+        }
+        #container{
+            border: 1px solid;
+            width: 50%;
+            height: auto;
+            display: flex;
+            margin-left: 4%;
+            gap: 10px;
+        }
+
+        a{
+            color: red;
+            font-size: 19px;
+        }
+
+        #para{
+            font-size: 17px;
+            line-height: 150%;
+            font-family: sans-serif;
+        }
+
+        #shows{
+            display: grid;
+            width: 80%;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(2,350px);
+            margin: auto;
+            gap: 20px;
+        }
+
+        #shows>div{
+            border: 1px solid red;
+        }
+
+        .box{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        img:hover,
+img:focus{
+  width:100%;
+  height: 300px;
+}
+
+
+.box:hover,
+.box:focus{
+  width:38%;
+  height: 300px;
+}
+    </style>
+</head>
+<body>
+    <u><h1 id="head">Audio</h1></u>
+    
+    <div id="container">
+        <div>
+            <img src="https://images.indianexpress.com/2022/08/ood-118-4.png?resize=450%2C450&w=450" alt="">
+        </div>
+
+        <div>
+            <p>OUR OWN DEVICES WITH NANDAGOPAL RAJAN</p>
+            <a href="https://indianexpress.com/audio/our-own-devices/what-to-expect-from-web-3-0/8111843/">What to expect from web 3.0</a>
+            <p id="para">In this episode, host Nandagopal Rajan speaks to Rajan Navani, the CEO and Founder of JetSynthesys about what exactly web 3.0 is, India's unique positioning with regard to it, and the real world effects of its features</p>
+        </div>
+    </div>
+
+    <u><h1 id="head">Shows</h1></u>
+    <div id="shows">
+        <div>
+            <img src="https://images.indianexpress.com/2018/06/three-things-2.jpg?w=300" alt="">
+            <div class="box">
+                <p>3 Things</p>
+                <p>2018</p>
+            </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

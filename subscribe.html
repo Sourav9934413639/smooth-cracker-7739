@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #nav {
+            width: 350px;
+            /* border: 1px red solid; */
+            margin: auto;
+        }
+
+        #nav>img {
+            width: 100%;
+        }
+
+        hr {
+            margin-top: 15px;
+            width: 100%;
+
+        }
+
+        #heading {
+            width: 90%;
+            margin: auto;
+            /* border: 1px solid red; */
+        }
+
+        h1 {
+            width: auto;
+            font-family: 'Droid Serif', serif;
+            font-size: 42px;
+            line-height: 31px;
+            text-align: center;
+
+
+        }
+
+        p {
+            width: auto;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        #card{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            /* border: 1px solid red; */
+            width: 70%;
+            margin: auto;
+            margin-top: 55px;
+            font-family: 'Droid Serif', serif;
+            
+
+        }
+        .c1{
+            width: 80%;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 10px;
+            height: 300px;
+            
+
+        }
+        .c1:hover{
+            cursor: pointer;
+            border: 2px solid blue;
+            position:sticky;
+        }
+        .disc{
+            width: 80%;
+            background-color: rgb(62, 62, 204);
+            color: aliceblue;
+            border-radius: 5px;
+            margin: 35px auto 35px auto;
+            padding: 5px 0 5px 0;
+            font-family: 'Droid Serif', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <img src="https://indianexpress.com/wp-content/themes/indianexpress/images/evolok/indian-express-logo-n.svg"
+            alt="">
+
+    </div>
+    <hr>
+    <div id="heading">
+        <h1>
+            Choose the best plan for your needs
+        </h1>
+        <p>Invest in trust with an Indian Express digital subscription that keeps you ahead of the curve</p>
+    </div>
+    <div id="card">
+        <div class="c1">
+            <h2>Digital Only</h2>
+            <p>Get unlimited access to all our journalism online (minus epaper)</p>
+            <hr style="width: 50%;">
+            <span>Plan starts form</span>
+            <div>₹70 /month</div>
+            <div class="disc">Save up to 64%</div>
+
+
+        </div>
+        <div class="c1">
+            <h2>All Access</h2>
+            <p>Digital + E-paper subscription so that you don’t miss anything</p>
+            <hr style="width: 50%;">
+            <span>Plan starts from</span>
+            <div>₹83 /month</div>
+            <div class="disc">Save up to 79%</div>
+
+        </div>
+        <div class="c1">
+            <h2>ePaper Only</h2>
+            <p>Access to the daily e-replica edition (minus Express Digital)</p>
+            <hr style="width: 50%;">
+            <span>Plan starts form</span>
+            <div>₹75 /month</div>
+            <div class="disc">Save up to 62%</div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
