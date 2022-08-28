@@ -33,7 +33,7 @@ let append = (data)=> {
 
         let title  = document.createElement('h3')
         title.innerText = el.title;
-        title.style.color="black"
+        // title.style.color="black";
         title.style.marginLeft="4%"
 
         let desc = document.createElement('p');
