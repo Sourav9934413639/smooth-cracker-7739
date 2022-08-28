@@ -8,19 +8,19 @@ function navbar()
     <div id="main_navbar">
         <div><img src="./Images/showmenu.jpg" alt=""></div>
         <div>
-        <div>Home</div>
-        <div>Explained</div>
+        <div><a href="index.html">Home</a></div>
+        <div><a href="explained.html">Explained</a></div>
         <div>Political Pulse</div>
         <div>India</div>
         <div>Cities</div>
         <div>Opinion</div>
-        <div>Entertainment</div>
+        <div><a href="entertainment.html">Entertainment</a></div>
         <div>Videos</div>
-        <div>Sports</div>
-        <div>Audio</div>
+        <div><a href="sports.html">Sports</a></div>
+        <div><a href="audio.html">Audio</a></div>
         <div>Education</div>
-        <div>My Account</div>
-        <div id="subscribe">Subscribe</div>
+        <div><a href="./account.html">My Account</a></div>
+        <div id="subscribe"><a href="subscribe.html">Subscribe</a></div>
         </div>
         <div><img src="./Images/searchpic.jpg" alt=""></div>
     </div>`;

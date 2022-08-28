@@ -6,7 +6,7 @@ function footer()
     <div class="box1">
     <div>
         <ul>
-            <li><a href="#">Explained News</a></li>
+            <li><a href="./explained.html">Explained News</a></li>
             <li><a href="#">Delhi News</a></li>
             <li><a href="#">Health News</a></li>
         </ul>
@@ -23,7 +23,7 @@ function footer()
         <ul>
             <li><a href="#">Latest Opinion</a></li>
             <li><a href="#">Bangalore News</a></li>
-            <li><a href="#">Sports News</a></li>
+            <li><a href="./sports.html">Sports News</a></li>
         </ul>
     </div>
     <div>
@@ -49,7 +49,7 @@ function footer()
     <div>
         <ul>
             <li><a href="#">India News</a></li>
-            <li><a href="#">Entertainment News</a></li>
+            <li><a href="./entertainment.html">Entertainment News</a></li>
             <li><a href="#">Subscribe To The Indian Express</a></li>
             <li><a href="#">Orphan First Kill Movie Review</a></li>
         </ul>

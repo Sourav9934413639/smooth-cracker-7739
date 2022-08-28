@@ -1,5 +1,6 @@
 
-
+import navbar from './components/navbar.js';
+document.getElementById("navbar").innerHTML=navbar();
 let url=`https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=ff9f8e8a8e094d76a8d6c4d0f701763e`
 
 async function getData () {
@@ -38,3 +39,5 @@ let append = (data) =>{
   })
 
 }
+import footer from './components/foot.js';
+document.getElementById("footer").innerHTML=footer();
