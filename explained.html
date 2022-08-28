@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explained</title>
+    <link rel="stylesheet" href="./style/navbar.css">
     <style>
         #sreeex {
             
@@ -71,8 +72,10 @@
             margin-top: 5px;
         }
     </style>
+    <link rel="stylesheet" href="./style/foot.css">
 </head>
 <body>
+    <div id="navbar"></div>
     <div id="sreeex">
         <div id="sreenav">
             <div>IDEAS</div>
@@ -204,9 +207,12 @@
         </div>
 
     </div>
+    <div id="footer"></div>
 </body>
 </html>
-<script>
+<script type="module">
+    import navbar from './components/navbar.js';
+    document.getElementById("navbar").innerHTML=navbar();
     const box=document.getElementById("srex");
     box.addEventListener('mouseover',function handleMouseOver(){
         box.style.color='red'
@@ -214,5 +220,7 @@
     box.addEventListener('mouseout',function handleMouseOut(){
         box.style.color='black'
     })
+    import footer from './components/foot.js';
+     document.getElementById("footer").innerHTML=footer();
 
 </script>

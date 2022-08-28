@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Change Password</title>
+    <title>Manage Subscriptions</title>
     <style>
-        *{
+               *{
             padding: 0px;
             margin: 0px;
         }
@@ -60,14 +60,14 @@
         #main_body{
             width: 50%;
             display: flex;
-        
+            
             margin: auto;
             gap: 10px;
         }
         #main_body>div:first-child{
            
            width: 25%;
-           
+        
         }
         #main_body>div>div{
             padding: 10px;
@@ -78,7 +78,7 @@
             margin-bottom: -10px;
         }
         #main_body>div>div>p{
-        
+            
             
             padding: 10px 0px;
             padding-left: 20px;
@@ -94,23 +94,13 @@
             padding: 30px;
             width: 50%;
         }
-        #info>input{
-            width: 95%;
-            height: 25px;
-            border: none;
-            border-bottom: 1px solid grey;
-            margin-top: 25px;
-
+        #info>p{
+            color: grey;
+            font-family: sans-serif;
+            font-size: 14px;
         }
-        #info>button{
-            
-            margin-top: 30px;
-            padding: 10px 20px;
-            border-radius: 10px;
-            color: blue;
-            font-weight: bold;
-            border: 1px solid grey;
-            background-color: white;
+        #info>p:last-child{
+            margin-top: 40px;
         }
         #main_body>div>div>p:hover{
             color: white;
@@ -123,7 +113,7 @@
     <div id="head">
         <div>
             <div><img src="./Images/backarrow.jpg" alt=""></div>
-            <div>Back to Indianexpress</div>
+            <div><a href="../index.html">Back to Indianexpress</a></div>
         </div>
         <div>
         <div><img src="./Images/logo.jpg" alt=""></div>
@@ -141,27 +131,25 @@
             <div><p id="log_out" onclick="highlight(id)">Logout</p></div>
         </div>
     <div id="info">
-        <h2>Change Password</h2>
-        
-        <input type="password" placeholder="New Password" id="new_password">
-        <input type="password" placeholder="Confirm Password" id="confirm_password">
-        <button onclick="change_password()">Change Password</button>
+        <h2>My Subscriptions</h2>
+        <p>Unlimited access to all the Journalism that interests you.</p>
+        <p>You have not purchased any subscriptions yet. Click here to <a href="../subscribe.html">View Plans</a></p>
     </div>
+    
 </body>
 </html>
 <script>
-    document.getElementById("cp").style="color:white;background-color:blue;border-radius:10px";
-    
+    document.getElementById("ms").style="color:white;background-color:blue;border-radius:10px";
     function highlight(id)
    {
-     if(id=="ms")
-     {
-        window.location.href="./subscription.html";
-        
-     }
-     else if(id=="ma")
+     if(id=="ma")
      {
         window.location.href="./account.html";
+        
+     }
+     else if(id=="cp")
+     {
+        window.location.href="./changepassword.html";
      }
      else if(id=="mn")
      {
@@ -169,22 +157,9 @@
      }
      else if(id=="log_out")
      {
-        
+        window.location.href="./signin.html";
      }
      
    }
    
-   function change_password()
-   {
-        let new_password=document.getElementById("new_password").value;
-        let confirm_password=document.getElementById("confirm_password").value;
-        if(new_password===confirm_password)
-        {
-            alert("Your password is changed");
-        }
-        else
-        {
-            alert("Please input valid password");
-        }
-  }
 </script>
