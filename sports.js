@@ -1,3 +1,12 @@
+import navbar from "./Account_Navbar_Footer/components/navbar.js"
+
+    document.getElementById('navbar').innerHTML=navbar();
+
+    import footer from "./Account_Navbar_Footer/components/foot.js";
+
+    document.getElementById('footer').innerHTML = footer()
+
+
 let url = 'https://newsapi.org/v2/top-headlines?country=in&category=Sports&apiKey=3fbeddfb8b474c858aded713acc19c9c';
 
 let getData = async () =>{
@@ -24,6 +33,7 @@ let append = (data)=> {
 
         let title  = document.createElement('h3')
         title.innerText = el.title;
+        title.style.color="black"
         title.style.marginLeft="4%"
 
         let desc = document.createElement('p');

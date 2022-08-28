@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports</title>
+    <link rel="stylesheet" href="Account_Navbar_Footer/style/navbar.css">
     <style>
-        #cont{
+        #cont {
             width: 90%;
             display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: auto;
-        margin: auto;
-        gap: 20px;
-        line-height: 140%;
-        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            margin: auto;
+            gap: 20px;
+            line-height: 140%;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
         }
 
-        #head{
+        #head123{
             color: gray;
             margin-left: 4%;
         }
 
-        u{
+        u {
             color: gray;
         }
-        
     </style>
+    <link rel="stylesheet" href="Account_Navbar_Footer/style/foot.css">
 </head>
+
 <body>
-    
-    <u><h1 id="head">Sports</h1></u>
+    <div id="navbar"></div>
+    <u>
+        <h1 id="head123">Sports</h1>
+    </u>
     <div id="cont"></div>
+    <div id="footer" style="margin-top: 50px;"></div>
 </body>
+
 </html>
 
-<script src="sports.js"></script>
+<script src="sports.js" type="module"></script>

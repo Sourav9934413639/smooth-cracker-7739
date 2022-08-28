@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio</title>
+    <link rel="stylesheet" href="Account_Navbar_Footer/style/navbar.css">
+    
     <style>
 
-        #head{
+        #head1{
             color: gray;
             margin-left: 4%;
         }
@@ -76,9 +78,13 @@ img:focus{
   height: 300px;
 } */
     </style>
+    <link rel="stylesheet" href="Account_Navbar_Footer/style/foot.css">
 </head>
 <body>
-    <u><h1 id="head">Audio</h1></u>
+    <div id="navbar">
+
+    </div>
+    <u><h1 id="head1">Audio</h1></u>
     
     <div id="container">
         <div>
@@ -153,5 +159,18 @@ img:focus{
             </div>
         </div>
     </div>
+    
+    <div id="footer" style="margin-top: 50px;"></div>
 </body>
 </html>
+
+<script type="module">
+    import navbar from "./Account_Navbar_Footer/components/navbar.js"
+
+    document.getElementById('navbar').innerHTML=navbar();
+
+    import footer from "./Account_Navbar_Footer/components/foot.js";
+
+    document.getElementById('footer').innerHTML = footer()
+
+</script>
