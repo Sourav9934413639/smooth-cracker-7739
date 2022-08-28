@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Account_Navbar_Footer/style/foot.css">
+    <link rel="stylesheet" href="Account_Navbar_Footer/style/navbar.css">
+    <style>
+        #container{
+            width: 60%;
+            margin: auto;
+            border: 1px solid gray;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav" style="margin-bottom:50px ;"></div>
+    <div id="container"></div>
+    <div id="foot"></div>
+    
+</body>
+</html>
+<script type="module">
+    import navbar from "./Account_Navbar_Footer/components/navbar.js";
+    document.getElementById("nav").innerHTML=navbar();
+    import footer from "./Account_Navbar_Footer/components/foot.js";
+    document.getElementById("foot").innerHTML=footer();
+
+
+    let data=JSON.parse(localStorage.getItem("news")) || [];
+
+    append(data[data.length-1])
+
+    // urlToImage
+
+
+    function append(data) {
+            let div = document.createElement('div');
+            div.setAttribute("class", "newshead")
+
+            let content=document.createElement("h2")
+            content.innerText=data.content;
+            content.style.margin="10px 10px 15px 10px"
+
+            let image = document.createElement('img');
+            image.src = data.urlToImage;
+            image.style.padding="10px 10px 15px 10px"
+
+            // image.style.height=""
+            image.style.width="90%"
+            image.style.margin="15px auto 15px auto"
+
+            let title = document.createElement('h1');
+            title.innerText = data.title;
+            title.style.margin="10px 10px 15px 10px";
+            
+            title.style.width="85%";
+            
+            let description=document.createElement("p")
+            description.innerText=data.description;
+            description.style.margin="10px 10px 15px 10px"
+            div.append(title,content,image,description)
+
+            document.getElementById("container").append(div)
+
+    }
+
+
+</script>

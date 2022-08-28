@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Account_Navbar_Footer/style/navbar.css">
+    <link rel="stylesheet" href="Account_Navbar_Footer/style/foot.css">
+    <style>
+        #heighlight {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            width: 80%;
+            /* border: 1px solid red; */
+            height: 400px;
+            margin: auto;
+            margin-bottom: 100px;
+
+
+
+        }
+
+        #h1 {
+
+            /* border: 1px solid gray; */
+        }
+
+        #h2 {
+            /* border:1px gold solid; */
+            height: 100%;
+            width: 100%;
+            overflow: scroll;
+
+        }
+
+        .news {
+            width: 95%;
+            margin-left: 5px;
+            height: auto;
+        }
+
+        #top {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* border: 1px solid teal; */
+            gap: 30px;
+            width: 80%;
+            /* border: 1px solid red; */
+            height: auto;
+            margin: auto;
+            margin-top: 25px;
+        }
+
+        #a1 {
+            /* border: 1px solid red; */
+
+        }
+
+        #a2 {
+            /* border: 1px solid red; */
+        }
+
+        .newshead {
+            width: 85%;
+            margin: 10px 0 10px 5px;
+            display: flex;
+            border: 1px solid gray;
+
+        }
+
+        /* .newshead{
+        
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="navigation">
+    </div>
+    <br style="margin: 15px 0 15px 0;">
+    <div id="heighlight">
+        <div id="h1"></div>
+        <div id="h2"></div>
+
+    </div>
+    <hr style="border: 2px solid gray;">
+    <div id="top">
+        <div id="a1">
+            <h1>TOP NEWS </h1>
+        </div>
+        <div id="a2">
+            <h1>LATEST NEWS</h1>
+        </div>
+        <div id="a3"></div>
+
+    </div>
+    <div id="footer">
+
+    </div>
+
+
+</body>
+
+</html>
+<script type="module">
+
+    //  Navbar-------------------------------//
+    import navbar from "./Account_Navbar_Footer/components/navbar.js";
+    document.getElementById("navigation").innerHTML = navbar();
+
+    // Higilights-----------------------------------------//
+
+    // 05ad9e58fbe84397abbb2de1ba320331
+    const url = 'https://newsapi.org/v2/everything?q=india&from=2022-07-28&sortBy=publishedAt&apiKey=05ad9e58fbe84397abbb2de1ba320331';
+    async function getData() {
+        let res = await fetch(url);
+        let data = await res.json();
+
+        console.log(data);
+        display(data.articles)
+        topleft(data.articles[0])
+    }
+
+    getData()
+
+
+
+
+
+    function display(data) {
+
+        data.forEach((el) => {
+            let div = document.createElement('div');
+            div.setAttribute("class", "news");
+            div.addEventListener("click", function () {
+                detailNews(el)
+            })
+            let title = document.createElement('h2');
+            title.innerText = el.title;
+            let hr = document.createElement("hr")
+            hr.style.margin = "10px 0 10px 0";
+            div.append(title, hr)
+            document.getElementById("h2").append(div)
+
+        })
+    }
+
+    function topleft(data) {
+
+        let image = document.createElement('img');
+        image.src = data.urlToImage;
+        image.style.width = '95%';
+        image.style.justifyContent = "center";
+
+        image.style.margin = "10px 5px 10px 5px"
+
+
+
+        let title = document.createElement('h2');
+        title.innerText = data.title;
+
+        let desc = document.createElement('p');
+        desc.innerText = data.description
+
+
+        let div = document.createElement('div');
+        div.addEventListener("click", function () {
+            detailNews(el)
+        })
+
+        div.append(title, image, desc)
+
+
+        let container = document.getElementById("h1").append(div)
+
+    }
+
+
+    // ------------------------------------------//
+
+
+    async function news(letestnews) {
+        const url = `https://newsapi.org/v2/everything?q=${letestnews}&from=2022-07-28&sortBy=publishedAt&apiKey=05ad9e58fbe84397abbb2de1ba320331`;
+        let res = await fetch(url);
+        let data = await res.json();
+
+        console.log(data);
+        append(data.articles)
+
+    }
+    news("TOP NEWS")
+
+    function append(data) {
+        data.forEach((el) => {
+            let div = document.createElement('div');
+            div.setAttribute("class", "newshead")
+            div.addEventListener("click", function () {
+                detailNews(el)
+            })
+            let image = document.createElement('img');
+            image.src = el.urlToImage;
+            image.style.height = "55px"
+            image.style.width = "75px"
+            image.style.margin = "5px 5px 5px 5px"
+
+            let title = document.createElement('p');
+            title.innerText = el.title;
+            title.style.margin = "10px 0 0 0";
+            title.style.width = "85%";
+            title.style.display = "block"
+            div.append(title, image)
+
+            document.getElementById("a1").append(div)
+
+
+
+
+
+        })
+    }
+
+
+
+    // -------------------------------------
+    async function Latestnews(letestnews) {
+        const url = `https://newsapi.org/v2/everything?q=${letestnews}&from=2022-07-28&sortBy=publishedAt&apiKey=05ad9e58fbe84397abbb2de1ba320331`;
+        let res = await fetch(url);
+        let data = await res.json();
+
+        console.log(data);
+        append2(data.articles)
+
+    }
+    Latestnews("LATEST NEWS")
+
+    function append2(data) {
+        data.forEach((el) => {
+            let div = document.createElement('div');
+            div.setAttribute("class", "newshead")
+            let image = document.createElement('img');
+            image.src = el.urlToImage;
+            image.style.height = "55px"
+            image.style.width = "75px"
+            image.style.margin = "5px 5px 5px 5px"
+
+            let title = document.createElement('p');
+            title.innerText = el.title;
+            title.style.margin = "10px 0 0 0";
+            title.style.width = "85%";
+            title.style.display = "block"
+            div.append(title, image)
+            div.addEventListener("click", function () {
+                detailNews(el)
+            })
+
+            document.getElementById("a2").append(div)
+
+
+
+
+
+        })
+    }
+
+    // ----------------------------------------------
+
+    import footer from "./Account_Navbar_Footer/components/foot.js"
+
+    document.getElementById("footer").innerHTML = footer();
+
+
+    // ---------------------------------------------
+
+    function detailNews(el) {
+        let mydata = JSON.parse(localStorage.getItem("news")) || [];
+        mydata.push(el);
+        localStorage.setItem("news", JSON.stringify(mydata));
+        location.href = "details.html"
+    }
+
+
+
+</script>
